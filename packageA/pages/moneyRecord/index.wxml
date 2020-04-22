@@ -1,0 +1,39 @@
+<!--packageA/pages/moneyRecord/index.wxml-->
+<view class="cu-list menu-avatar">
+    <view class="cu-item padding-top items padding-bottom  box animated bounceIn" style="height:160rpx;" bindtap="moneyDetails" wx:for="{{recordLists}}" data-flowno="{{item.flowno}}" wx:key='index'>
+      <view class="cu-avatar bg-red round lg" style=""><text class="cuIcon-moneybagfill text-greyLight"></text></view>
+      <view class="content">
+        <!-- 油站名称 -->
+        <view class="text-block">{{item.stationName}}</view>
+        <!-- 油站的详细信息 -->
+        <view class="text-block text-sm flex">
+          <text class="text-cut">
+							<text class=" text-blue  margin-right-xs"></text>{{item.tradetype == null?'其他':item.tradetype}}
+          </text>
+        </view>
+        <!-- 油号信息价格 -->
+        <view class="text-gray text-sm flex">
+          	{{item.oiltime}}
+        </view>
+      </view>
+      <view class="action" style="width:200rpx;text-align:right;padding-right:20rpx;">
+        <view class="text-grey text-lg" bindtap="goBookOrder">
+          <view class="line-block" style="font-weight:600;">
+            {{item.settlement}}元
+          </view>
+        </view>
+      </view>
+      
+      
+    </view>
+    <view wx:if="{{recordLists.length==0}}">
+      <view class="margin flex">
+        <view class="bg-white flex-sub radius shadow-lg">
+          <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="gif-white response" style="height:240rpx"></image>
+        </view>
+      </view>
+      <view style="text-align:center;">
+        没有更多了
+      </view>
+    </view>
+</view>

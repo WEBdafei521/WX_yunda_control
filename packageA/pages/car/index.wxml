@@ -1,0 +1,115 @@
+<!--pages/tool/myCar/index.wxml-->
+<view>
+  <view class="my_padding_lg my_display_spb">
+    <!-- <button bindtap="actionSheetTap" type="primary" style="width:90px;height:30px;line-height:30px;border-radius:30px;background:#2791FE;margin:0;" class="myFont_nol">添加车辆</button> -->
+    <button bindtap="actionSheetTap" style="width:146rpx;padding:16rpx 0;margin:0;" class="cu-btn round  bg-blue">添加</button>
+    <view class="myFont_nol">已添加：{{carList.length}}辆车</view>
+  </view>
+  <!-- 车辆列表 -->
+    <view wx-if="{{carList.length==0}}" class="bg-white flex-sub margin-right radius shadow-lg" style="width:250rpx;margin:250rpx auto;">
+        <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="gif-white response" style="height:240rpx;width:250rpx;"></image>
+        <view style="text-align:center;padding-bottom:16rpx;">暂无车辆</view>
+    </view>
+  <view>
+    <!-- item -->
+    <view style="padding:20px 25px;background:#ffffff;margin-bottom:3px;" class="my_display" wx:for="{{carList}}" wx:key="index">
+      <view>
+        <image class="images_sup radius_lg" src="../../images/ce.png" mode="widthFix"></image>
+      </view>
+      <view class="my_padding_lr" style="font-weight:600;" >
+        <view class="myFont_nol my_padding_lr"  style="margin-bottom:5px;">{{item.lpn}}</view>
+        <view class="myFont_nol my_padding_lr" wx:if="{{item.authTimeType !=9 }}" style="color:#ED5B4E;">剩余授权量：{{item.authSurplus}}</view>
+        <view class="myFont_nol my_padding_lr" wx:if="{{item.authTimeType ==9 }}"  style="color:#999;">不限量</view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 上拉框 -->
+  <view class="{{addCar==true?'jumu':'hide'}}" id="a" catchtap="cancelJU">
+    
+    
+  </view>
+  <view class="my_padding_lg aaa {{addCar==true?'selected':''}}" id="b">
+      <!-- 添加车辆输入框 -->
+      <view class="inputs">
+        <view class="my_display_spb">
+          <view class="my_display">
+            <icon class="iconfont icon-yonghu:before my_display_mid"></icon>
+            <view class="my_padding_lr myFont_nol">车牌号</view>
+          </view>
+          <view class="my_display_mid"><input type="text" value="{{carInfo.lpn}}" bindinput="addNum" placeholder-style="font-size:14px;" placeholder="请输入"></input></view>
+        </view>
+      </view>
+
+      <view class="inputs">
+        <view class="my_display_spb">
+          <view class="my_display">
+            <icon class="iconfont icon-dianhua:before my_display_mid"></icon>
+            <view class="my_padding_lr myFont_nol">车架号</view>
+          </view>
+          <view class="my_display_mid"><input type="text" value="{{carInfo.vin}}" bindinput="addChejia" placeholder-style="font-size:14px;" placeholder="请输入"></input></view>
+        </view>
+      </view>
+      <view class="inputs">
+        <view class="my_display_spb">
+          <view class="my_display">
+            <icon class="iconfont icon-shezhi:before my_display_mid"></icon>
+            <view class="my_padding_lr myFont_nol">满箱油量</view>
+          </view>
+          <view class="my_display_mid"><input type="text" value="{{carInfo.tankCapacity}}" bindinput="addVolume" placeholder-style="font-size:14px;" placeholder="请输入"></input></view>
+        </view>
+      </view>
+      <view class="inputs">
+        <view class="my_display_spb">
+          <view class="my_display">
+            <icon class="iconfont icon-shezhi:before my_display_mid"></icon>
+            <view class="my_padding_lr myFont_nol">发动机号</view>
+          </view>
+          <view class="my_display_mid"><input type="text" value="{{carInfo.engine}}" bindinput="addEngine" placeholder-style="font-size:14px;" placeholder="请输入"></input></view>
+        </view>
+      </view>
+      <view class="inputs">
+        <view class="my_display_spb">
+          <view class="my_display">
+            <icon class="iconfont icon-yue:before my_display_mid"></icon>
+            <view class="my_padding_lr myFont_nol">车主</view>
+          </view>
+          <view class="my_display_mid"><input type="text" value="{{carInfo.owner}}" bindinput="addMaster" placeholder-style="font-size:14px;" placeholder="请输入"></input></view>
+        </view>
+      </view>
+      <view class="inputs">
+        <view class="my_display_spb">
+          <view class="my_display">
+            <icon class="iconfont icon-yue:before my_display_mid"></icon>
+            <view class="my_padding_lr myFont_nol">手机号码</view>
+          </view>
+          <view class="my_display_mid"><input type="text" value="{{carInfo.mphone}}" bindinput="addTel" placeholder-style="font-size:14px;" placeholder="请输入"></input></view>
+        </view>
+      </view>
+      <view class="inputs">
+        <view class="my_display_spb">
+          <view class="my_display">
+            <icon class="iconfont icon-yue:before my_display_mid"></icon>
+            <view class="my_padding_lr myFont_nol">SIM卡号</view>
+          </view>
+          <view class="my_display_mid"><input type="text" value="{{carInfo.sim}}" bindinput="addSIM" placeholder-style="font-size:14px;" placeholder="请输入"></input></view>
+        </view>
+      </view>
+      <view class="inputs">
+        <view class="my_display_spb">
+          <view class="my_display">
+            <icon class="iconfont icon-yue:before my_display_mid"></icon>
+            <view class="my_padding_lr myFont_nol">设备号</view>
+          </view>
+          <view class="my_display_mid"><input type="text" value="{{carInfo.devsn}}" bindinput="addEquipment" placeholder-style="font-size:14px;" placeholder="请输入"></input></view>
+        </view>
+      </view>
+      <!-- 添加按钮 -->
+      <view class="my_display_spa" style="margin-top:15px;">
+        <view class="add radius_md" bindtap="addCar" style="background:#1888F6;color:#ffffff;">添加</view>
+        <view class="add radius_md" bindtap="cancel" style="color:#1888F6;">取消</view>
+      </view>
+    </view>
+    
+</view>

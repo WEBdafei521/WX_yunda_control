@@ -1,0 +1,23 @@
+<!--packageA/pages/index/index.wxml-->
+<scroll-view scroll-y class="scrollPage" style="background:#ffffff;">
+  <view class="containers">
+    <view class="png margin-top" style="margin:0 auto;"><image src="../../images/balance.png" mode="widthFix"></image></view>
+  </view>
+  <view class="my_display_spa myFont_lg">
+    我的零钱
+  </view>
+  <view class="balance my_display_spa">
+    ￥{{myBalance}}
+  </view>
+
+  <view class="my_display_spa" style="margin-top:150rpx;">
+    <button class="cu-btn bg-green margin-tb-sm lg" bindtap="recharge">充值</button>
+  </view>
+  <view class="my_display_spa">
+    <button class="cu-btn bg-gray lg" style="color:#39b54a;">提现</button>
+  </view>
+  
+  <view class="myFont_nol" style="color:#666666;position:fixed;bottom:20rpx;width:100vw;text-align:center;">
+    本服务由第三方提供
+  </view>
+</scroll-view>

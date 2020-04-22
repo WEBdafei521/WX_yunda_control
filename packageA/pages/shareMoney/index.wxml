@@ -1,0 +1,73 @@
+ 
+ <scroll-view scroll-y class="DrawerPage {{modalName=='viewModal'?'show':''}}">
+
+  <form bindsubmit="formSubmit" >
+    <view class="cu-form-group margin-top">
+    
+      <view class="title">我的余额</view>
+      <!-- <input type="digit" name="price" placeholder="请输入分配金额"></input> -->
+      <view>{{myBalance}}</view>
+    </view>
+    
+    <view class="cu-list menu" style="border-top:20rpx solid rgba(150,150,150,.1)">
+      <view class="cu-item" wx:for="{{driveLists}}" wx:key>
+        <view class="content">
+          <text class="cuIcon-peoplefill text-red"></text>
+          <text style="padding:0 16rpx;">{{item.username}}</text>
+        </view>
+        <view class="action arrow">
+          <view class="action lg">
+            <view class="my_display">
+              <button class="bg-gray" bindtap="reduce" data-index="{{index}}" style="width:70rpx;padding:0;height:70rpx;text-align:center;line-height:70rpx;">-</button>
+              <input  value="{{item.value}}" type="digit" bindinput="changeValue" data-index="{{index}}"   style="width:100rpx;padding:0;height:80rpx;text-align:center;line-height:80rpx;"></input>
+              <button class="bg-cyan" bindtap="add" data-index="{{index}}" style="width:70rpx;padding:0;height:70rpx;text-align:center;line-height:70rpx;">+</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 选中油品 --> 
+    <view class="cu-list menu">
+      <view class="cu-item arrow" bindtap="showModal" data-target="viewModal">
+        <view class="content">
+          <text class="cuIcon-btn text-green"></text>
+          <text class="text-grey"></text>
+          <text style="padding:0 16rpx;">司机</text>
+        </view>
+        <view class="action arrow">
+          <view class="action lg"> 
+            请选择司机
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="my_display_mid">
+      <button class="cu-btn bg-blue buttons" form-type="submit" style="width:90vw;margin: 40rpx auto;">完成</button>
+    </view>
+  </form>
+</scroll-view>
+    <view class="DrawerClose {{modalName=='viewModal'?'show':''}}" bindtap="hideModal">
+			<text class="cuIcon-pullright"></text>
+		</view>
+		<scroll-view scroll-y class="DrawerWindow {{modalName=='viewModal'?'show':''}}">
+      <view class="aaa"><button bindtap="selectDriver" style="width:100%;">完成</button></view>
+			<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+				<view class="cu-item" wx:for="{{region}}" wx:key="index" bindtap="aaa" data-index="{{index}}">
+					<view class="content">
+						<text class="cuIcon-github text-grey"></text>
+						<text class="text-grey">{{item.username}}</text>
+					</view>
+          <view class="action">
+            <view class="action lg"> 
+              <checkbox-group>
+
+                <checkbox checked="{{item.checked}}"/>
+
+              </checkbox-group>
+            </view>
+          </view>
+				</view>
+        
+			</view>
+		</scroll-view>

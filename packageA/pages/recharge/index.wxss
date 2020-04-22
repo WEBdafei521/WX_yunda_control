@@ -1,0 +1,9 @@
+
+.recharge{
+  background: #ffffff;
+  width:90vw;
+  padding: 60rpx;
+  border-radius: 22rpx;
+  margin: 0 auto;
+  margin-top: 50rpx;
+}

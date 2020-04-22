@@ -1,0 +1,114 @@
+<!--packageA/pages/index/index.wxml-->
+<scroll-view scroll-y class="scrollPage">
+  <view class="UCenter-bg">
+    <!-- <view wx:if="{{isHas}}" style="border-radius: 50%;margin-bottom: 20rpx;width:150rpx;height:150rpx;background:url({{avatarUrl}});background-size:100% 100%;"> </view> -->
+    <open-data wx:if="{{canIUse}}" type="userAvatarUrl" class="png" style="border-radius: 50%;margin-bottom: 20rpx;width:150rpx;height:150rpx;overflow:hidden;"></open-data>
+    <!-- <open-data wx:if="{{isHas}}" type="userAvatarUrl" class="png" style="border-radius: 50%;margin-bottom: 20rpx;width:150rpx;height:150rpx;overflow:hidden;"></open-data> -->
+    
+    <!-- <image wx:else src="{{avatarUrl}}" class="png" style="border-radius: 50%;margin-bottom: 20rpx;width:150rpx;height:150rpx;background:url({{avatarUrl}})" mode="widthFix"></image> -->
+    <view class="text-xl">云达司机端
+      <text class="text-df">v2.0</text>
+    </view>
+    <view class="margin-top-sm ">
+      <text wx:if="{{isLogin}}">{{username}}</text>
+      <button class="post" wx:if="{{!isLogin}}" bindtap="toLogin">请前往登录</button>
+      <!-- <button class="post" wx:if="{{!isLogin}}" bindtap="toLogin" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"></button> -->
+    </view>
+    <image src="https://you.yunfeiyang.com/img/wechat/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+  </view>
+  
+  <view class="padding flex text-center text-grey bg-white shadow-warp">
+    <view class="flex flex-sub flex-direction solid-right"  bindtap="moneyRecord">
+      <view class="text-xxl text-orange">{{visitTotal}}</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-attentionfill"></text> 资金记录</view>
+    </view>
+    <view class="flex flex-sub flex-direction solid-right" bindtap="myBalance">
+      <view class="text-xxl text-blue">{{myBalance}}</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-favorfill"></text> 账户余额</view>
+    </view>
+    <view class="flex flex-sub flex-direction" bindtap="recharge">
+      <view class="text-xxl text-green">{{forksCount}}</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-fork"></text> 充值记录</view>
+    </view>
+    
+  </view>
+
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow" bindtap="m1">
+      <button class="cu-btn content">
+        <text class="cuIcon-appreciatefill text-red"></text>
+        <text class="text-grey">我的M1卡</text>
+      </button>
+    </view>
+    <view class="cu-item arrow" bindtap="myCar">
+      <button class="cu-btn content">
+        <text class="cuIcon-writefill text-cyan"></text>
+        <text class="text-grey">我的车辆</text>
+      </button>
+    </view>
+
+    <view class="cu-item arrow" bindtap="shareMoney" wx:if="{{isController==0}}">
+      <button class="cu-btn content">
+        <text class="cuIcon-friendfill text-green"></text>
+        <text class="text-grey">资金分配</text>
+      </button>
+    </view>
+
+    <view class="cu-item arrow" bindtap="shareRecord" wx:if="{{isController==0}}">
+      <button class="cu-btn content">
+        <text class="cuIcon-rankfill text-orange"></text>
+        <text class="text-grey">分配记录</text>
+      </button>
+    </view>
+
+    <view class="cu-item arrow" bindtap="fleetInfo" wx:if="{{isController==0}}">
+      <button class="cu-btn content">
+        <text class="cuIcon-copy text-green"></text>
+        <text class="text-grey">车队信息</text>
+      </button>
+    </view>
+
+    <view class="cu-item arrow" bindtap="setting">
+      <navigator class="content" url="../setting/index" hover-class="none">
+        <text class="cuIcon-settings text-cyan"></text>
+        <text class="text-grey">设置</text>
+      </navigator>
+    </view>
+  </view>
+
+
+  <view class="box">
+    <view class="cu-bar tabbar bg-white">
+      <view class="action" bindtap="goIndex">
+        <view class="cuIcon-cu-image">
+          <image src="../../images/tabbar/basics.png"></image>
+        </view>
+        <view class="text-gray">首页</view>
+      </view>
+      <!-- <view class="action" bindtap="goBook">
+        <view class="cuIcon-cu-image">
+          <image src="../../images/tabbar/component.png"></image>
+        </view>
+        <view class="text-gray">下单</view>
+      </view> -->
+      <view class="action" bindtap="goOrder">
+        <view class="cuIcon-cu-image">
+          <image src="../../images/tabbar/plugin.png"></image>
+        </view>
+        <view class="text-gray">订单</view>
+      </view>
+      <view class="action">
+        <view class="cuIcon-cu-image">
+          <image src="../../images/tabbar/about_cur.png"></image>
+          <!-- <view class="cu-tag badge"></view> -->
+        </view>
+        <view class="text-green">我的</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="cu-tabbar-height"></view>
+</scroll-view>

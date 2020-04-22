@@ -1,0 +1,9 @@
+/* packageA/fleetManage/recharge/index.wxss */
+.recharge{
+  background: #ffffff;
+  width:80vw;
+  padding: 60rpx;
+  border-radius: 22rpx;
+  margin: 0 auto;
+  margin-top: 50rpx;
+}

@@ -1,0 +1,55 @@
+<!--packageA/pages/index/index.wxml-->
+<scroll-view scroll-y class="scrollPage">
+  <view class="UCenter-bg">
+    <image src="{{userInfo.avatarUrl}}" class="png" style="border-radius: 50%;margin-bottom: 20rpx;" mode="widthFix"></image>
+    <view class="text-xl">车队管理端
+      <text class="text-df">v2.0</text>
+    </view>
+    <view class="margin-top-sm">
+      <text>{{username}}</text>
+    </view>
+    <image src="https://you.yunfeiyang.com/img/wechat/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+  </view>
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+  
+    <view class="cu-item arrow">
+      <view class="content" bindtap="CopyLink" data-link="https://github.com/weilanwl/ColorUI">
+        <text class="cuIcon-github text-green"></text>
+        <text class="text-grey">分配记录</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+       <view class="content">
+        <image src="../../images/logo.png" class="png" mode="aspectFit"></image>
+        <text class="text-grey">充值记录</text>
+       </view>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content" bindtap="fleetInfo">
+        <text class="cuIcon-creativefill text-orange"></text>
+        <text class="text-grey">车队信息</text>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="box">
+    <view class="cu-bar tabbar bg-white">
+      <view class="action" bindtap="goIndex">
+        <view class="cuIcon-cu-image">
+          <image src="../../images/tabbar/basics.png"></image>
+        </view>
+        <view class="text-gray">首页</view>
+      </view>
+      <view class="action">
+        <view class="cuIcon-cu-image">
+          <image src="../../images/tabbar/about_cur.png"></image>
+          <view class="cu-tag badge"></view>
+        </view>
+        <view class="text-green">我的</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="cu-tabbar-height"></view>
+</scroll-view>

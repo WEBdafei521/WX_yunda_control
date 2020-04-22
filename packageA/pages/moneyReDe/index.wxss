@@ -1,0 +1,4 @@
+/* packageA/pages/moneyReDe/index.wxss */
+page{
+  background: #fff;
+}

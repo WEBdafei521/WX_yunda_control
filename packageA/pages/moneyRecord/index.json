@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "资金记录",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "onReachBottomDistance": 200
+}

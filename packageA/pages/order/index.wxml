@@ -1,0 +1,99 @@
+<!-- <scroll-view scroll-y class="scrollPage"> -->
+  <scroll-view scroll-x class="bg-green nav">
+    <view class="flex text-center">
+      <view class="cu-item flex-sub {{7==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="7">
+        <text class="cuIcon-pay"></text> 待付款
+      </view>
+      <view class="cu-item flex-sub {{8==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="8">
+        <text class="cuIcon-copy"></text> 已完成
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 待付款 -->
+  <view class="cu-list menu menu-avatar"  wx:if="{{TabCur==7}}">
+    <view wx-if="{{unpays.length==0 && !isLoading}}" class="bg-white flex-sub margin-right radius shadow-lg" style="width:250rpx;margin:23vh auto;">
+        <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="gif-white response" style="height:240rpx;width:250rpx;"></image>
+        <view style="text-align:center;padding-bottom:16rpx;">暂无订单</view>
+    </view>
+    <view class="cu-item arrow box animated bounceIn" wx:for="{{unpays}}" wx:key='index' bindtap="toPay" data-stationId="{{item.flowno}}">
+      <view class="content lefts">
+        <view >
+          <text class="text-cut">订单号:{{item.flowno}}</text>
+          <view class="cu-tag round bg-red sm">待付款</view>
+        </view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut">下单时间：{{item.createTime}} </text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 已付款 -->
+  <view class="cu-list menu menu-avatar"  wx:if="{{TabCur==8}}">
+   <!-- -->
+    <view class="bg-white flex-sub margin-right radius shadow-lg" style="width:250rpx;margin:23vh auto;" wx-if="{{pays.length==0 && !isLoading}}">
+        <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="gif-white response" style="height:240rpx;width:250rpx;"></image>
+        <view style="text-align:center;padding-bottom:16rpx;">暂无订单</view>
+    </view>
+
+    <view class="cu-item arrow arrow box animated bounceIn"  wx:for="{{pays}}" wx:key="index" bindtap="orderDetail" data-stationId="{{item.flowno}}">
+      <view class="content lefts">
+        <view >
+          <text class="text-cut">订单号:{{item.flowno}}</text>
+          <view class="cu-tag round bg-green sm" wx:if="{{item.lockStatus == 0}}">待提取</view>
+          <view class="cu-tag round bg-yellow sm" wx:if="{{item.lockStatus == 1}}">订单异常</view>
+        </view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut">下单时间：{{item.createTime}} </text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="cu-item arrow"  wx:for="{{orderLists}}" wx:key="index" bindtap="orderDetail" data-stationId="{{item.flowno}}" wx:if="{{item.tradeflag==9}}">
+      <view class="content lefts">
+        <view >
+          <text class="text-cut">订单号:{{item.flowno}}</text>
+          <view class="cu-tag round bg-orange sm">已取消</view>
+        </view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut">下单时间：{{item.createTime}} </text>
+        </view>
+      </view>
+      <view wx-if="{{orderLists.length==0}}" class="bg-white flex-sub margin-right radius shadow-lg" style="width:250rpx;margin:250rpx auto;">
+        <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="gif-white response" style="height:240rpx;width:250rpx;"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 加载动画 -->
+   <!-- wx-if="{{isLoading}}" -->
+    <view style="position: fixed;top:0;z-index:999;width:44vw;left:28vw;top:30vh;" class="bg-white flex-sub radius shadow-lg" wx-if="{{isLoading}}">
+      <image src="https://image.weilanwl.com/gif/rhomb-white.gif" mode="aspectFit" class="gif-white response" style="height:250rpx"></image>
+      <view style="text-align:center;padding-bottom:16rpx;">加载中</view>
+    </view>
+  
+  <!-- tabbar -->
+  <view class="box">
+    <view class="cu-bar tabbar bg-white">
+      <view class="action" bindtap="goIndex">
+        <view class="cuIcon-cu-image">
+          <image src="../../images/tabbar/basics.png"></image>
+        </view>
+        <view class="text-gray">首页</view>
+      </view>
+      <view class="action">
+        <view class="cuIcon-cu-image">
+          <image src="../../images/tabbar/plugin_cur.png"></image>
+          <!-- <view class="cu-tag badge">0</view> -->
+        </view>
+        <view class="text-green">订单</view>
+      </view>
+      <view class="action">
+        <view class="cuIcon-cu-image" bindtap="goUser">
+          <image src="../../images/tabbar/about.png"></image>
+          <!-- <view class="cu-tag badge"></view> -->
+        </view>
+        <view class="text-gray">我的</view>
+      </view>
+    </view>
+  </view>
+  <view class="cu-tabbar-height"></view>
+<!-- </scroll-view> -->

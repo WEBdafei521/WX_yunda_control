@@ -1,0 +1,81 @@
+<!--packageA/pages/pay/index.wxml-->
+<scroll-view scroll-y class="scrollPage">
+  <view class="titleSty">
+    <view style="height:126rpx;width:100vw;"></view>
+    <view class="back"><text bindtap="backs" style="font-size:40rpx;" class="cuIcon-back lg text-white"></text></view>
+    <view style="font-size:40rpx;display: flex;justify-content: center;align-item:center;flex-direction: row;margin-bottom:20rpx;">
+         <text style="font-size:50rpx;" class="cuIcon-time lg text-white"></text> <text style="font-size:36rpx;padding:9rpx 20rpx;color:#fff;">等待支付</text> 
+    </view>
+    <view style="margin-bottom:30rpx;">
+      <text class="text-white lg">需付款：</text>
+      <text class="text-white" style="font-size:22rpx;">￥</text>
+      <text class="text-white" style="font-size:36rpx;">{{orderInfo.amountMoney}} </text>
+      <text class="text-white" style="font-size:22rpx;"> 元</text>
+      <!-- <text class="text-white" style="padding-left:32rpx;">剩余：07小时45分钟</text> -->
+    </view>
+    <view class="oilType">
+      <view style="padding-top:4rpx;"><text class="cuIcon-locationfill lg text-black"></text></view>
+      <view style="margin-left:16rpx;">
+        <view style="padding-bottom:10rpx;color:#000;">{{orderInfo.departname}}</view>
+        <view style="color:#8799a3;">{{orderInfo.address}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 订单信息 -->
+  <view class="margin-top bg-white orderInfo">
+    <view class="my_display items">
+      <view class="title">订单编号：</view>
+      <view class="item_val">{{orderInfo.flowno}}</view>
+    </view>
+
+    <view class="my_display items">
+      <view class="title">下单时间：</view>
+      <view class="item_val">{{orderInfo.createTime}}</view>
+    </view>
+
+    <view class="my_display items">
+      <view class="title">订单金额：</view>
+      <view class="item_val">{{orderInfo.orderMoney}}元</view>
+    </view>
+    
+    <view class="my_display items">
+      <view class="title">支付状态：</view>
+      <view class="item_val">待支付</view>
+    </view>
+  </view>
+
+  <!-- 价格信息 -->
+  <view class="margin-top bg-white orderInfo">
+    <view class="my_display_spb items">
+      <view class="title">订单金额：</view>
+      <view class="item_val">{{orderInfo.orderMoney}}元</view>
+    </view>
+
+    <view class="my_display_spb items">
+      <view class="title">优惠金额：</view>
+      <view class="item_val">-{{discount}}元</view>
+    </view>
+    <view class="my_display_spb items">
+      <view class="title"></view>
+      <view class="item_val">
+        需付款 
+        <text class="text-red" style="font-size:22rpx;">￥</text>
+        <text class="text-red" style="font-size:36rpx;">{{orderInfo.amountMoney}}</text>
+        <text class="text-red" style="font-size:22rpx;">元</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="bottoms">
+    <view class="my_display_spb" style="padding:0 30rpx;">
+      <view></view>
+      <view class="my_display" style="height:100rpx;">
+        <view></view>
+         <button class="cu-btn round shadow orderBtn" bindtap="cancelOrder" style="border:1rpx solid #999;margin-right:6rpx;">取消订单</button>
+          <button class="cu-btn round text-white shadow orderBtn" bindtap="toPay" style="background:linear-gradient(to right,#F32A3A,#F62F34,#FB3C2D,#FB4E2C,#FB6D27);">去支付</button>
+        <view></view>
+      </view>
+    </view>
+    
+  </view>
+</scroll-view>

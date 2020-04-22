@@ -1,0 +1,86 @@
+<!--packageA/pages/moneyReDe/index.wxml-->
+<scroll-view scroll-y class="scrollPage">
+  <view class="margin-bottom">
+    <!-- 油站名称 -->
+    <view class="my_display_mid margin-bottom">
+      <view class="cu-avatar bg-red round md margin-right`">
+        <text class="cuIcon-shopfill text-fill" style="font-size:40rpx;"></text> 
+      </view>
+      <view><text style="font-size:36rpx;">{{moneyDetails.stationName}}</text></view>
+    </view>
+    <!-- 金额 -->
+    <view class="my_display_mid margin-bottom" style="font-size:55rpx;font-weight:600;">
+      <view>-{{moneyDetails.settlement}}</view>
+    </view>
+    <view class="my_display_mid ">
+       <text class="text-gray" style="font-size:30rpx;">交易成功</text>
+    </view>
+  </view>
+  <view class="cu-list menu sm-border">
+    <!-- 付款方式 -->
+    <!-- arrow -->
+    <view class="cu-item"> 
+      <view class="content">
+        <text class="text-grey">付款方式</text>
+      </view>
+       <view class="action">
+        <text class="text-block text-sm">{{moneyDetails.paymentMode?moneyDetails.paymentMode:'余额'}}</text>
+      </view>
+    </view>
+    <!-- 产品说明 -->
+    <view class="cu-item ">
+      <view class="content">
+        <text class="text-grey">产品说明</text>
+      </view>
+       <view class="action">
+        <text class="text-block text-sm">云飞扬加油站</text>
+      </view>
+    </view>
+    <!-- 创建时间 -->
+    <view class="cu-item ">
+      <view class="content">
+        <text class="text-grey">创建时间</text>
+      </view>
+       <view class="action">
+        <text class="text-block text-sm">{{moneyDetails.oiltime}}</text>
+      </view>
+    </view>
+    <!-- 订单号 -->
+    <view class="cu-item ">
+      <view class="content">
+        <text class="text-grey">订单号</text>
+      </view>
+       <view class="action">
+        <text class="text-block text-sm">{{moneyDetails.flowno}}</text>
+      </view>
+    </view>
+    <!-- 订单金额 -->
+    <view class="cu-item ">
+      <view class="content">
+        <text class="text-grey">订单金额</text>
+      </view>
+       <view class="action">
+        <text class="text-block text-sm">{{moneyDetails.trademoney}} 元</text>
+      </view>
+    </view>
+    <!-- 结算金额 -->
+    <view class="cu-item">
+      <view class="content">
+        <text class="text-grey">结算金额</text>
+      </view>
+       <view class="action">
+        <text class="text-block text-sm">{{moneyDetails.settlement}} 元</text>
+      </view>
+    </view>
+    <!-- 加油量 -->
+    <view class="cu-item" wx:if="{{moneyDetails.qty}}">
+      <view class="content">
+        <text class="text-grey">加油量</text>
+      </view>
+       <view class="action">
+        <text class="text-block text-sm">{{moneyDetails.qty ? moneyDetails.qty+'L':''}}</text>
+      </view>
+    </view>
+   
+  </view>
+</scroll-view>

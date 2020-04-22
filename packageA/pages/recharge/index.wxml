@@ -1,0 +1,16 @@
+<!--packageA/pages/index/index.wxml-->
+<scroll-view scroll-y class="scrollPage">
+  
+  <!-- 输入充值金额  -->
+  <view class="my_padding_lg recharge">
+    <view class="my_padding_tb">充值金额</view>
+    <view class="my_display_spb" style="border-bottom:2rpx solid rgba(100,100,100,.2);">
+      <text style="font-size:56rpx;font-weight:600;">￥</text>
+      <input bindinput="bindKeyInput" type="digit" style="font-size:64rpx;font-weight:600;width:64vw;height:100rpx;"/>
+    </view>
+    <text class="text-grey" style="margin:16rpx 0;display:block">请输入充值金额</text>
+    <view>
+      <button class="cu-btn bg-green margin-top" bindtap="recharge" style="width:100%;margin-top:40rpx;">充值</button>
+    </view>
+  </view>
+</scroll-view>

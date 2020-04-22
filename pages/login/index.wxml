@@ -1,0 +1,46 @@
+<!--pages/login/index.wxml-->
+<view>
+  <view class="header">
+		<image class="image" style="width:100vw;" src="../../static/login.jpg" mode="aspectFill"></image>
+	</view>
+
+  <view class="form"  wx:if="{{!isLogin}}">
+     <!-- 注册 -->
+    <view class="handle bg-blue"  class="box animated bounceInDown" style="margin-top:68rpx;border-radius:20rpx;margin-bottom:20rpx;">
+      <view bindtap="scanCode" class="bg-blue" style="font-size:36rpx;font-weight:600;width:100%;text-align:center;padding:20rpx 16rpx;border-radius:20rpx;">
+         {{a}}
+      </view>
+    </view>
+    <view>
+      <button wx:if="{{isHas}}" open-type="getPhoneNumber" disabled="{{hasTap}}" class="bg-blue" bindgetphonenumber="getPhoneNumber">注册并登陆</button>
+      <!-- 请先扫码 -->
+      <button wx:if="{{!isHas}}" class="bg-blue"  bindtap="select_number">注册并登陆</button>
+    </view> 
+    <view class="text-blue margin-top" bindtap="isLogins" style="text-align:right;width:100%;">返回登陆</view>
+  </view>
+  
+  <view class="form" wx:if="{{isLogin}}">
+    <view></view>
+     <!-- 登陆 -->
+    <button class="box animated bounceInDown bg-blue" disabled="{{hasTap}}" style="margin-top:164rpx;" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber1"> 手机号一键登录 </button>
+    <view class="text-blue margin-top my_display_spb" bindtap="isLogins" style="text-align:right;width:100%;">
+      <view></view>
+      <view style="width:120rpx;height:60rpx;text-align:center;line-height:60rpx;">注册</view>
+    </view>
+  </view>
+  
+  <!-- 底部表示 -->
+  <view style="position: fixed;bottom:30rpx;width:100vw;">
+    <view class="my_display_col">
+      <!-- 标识 -->
+      <view class="my_padding_tb myFont_md" style="margin:0 auto;color:#999;">
+        郑州云飞扬信息技术有限公司
+      </view>
+      <view class="myFont_md my_padding_tb" style="font-weight:600;margin:0 auto;">
+        豫ICP备16021744号-3
+      </view>
+    </view>
+  </view>
+  
+ 
+</view>

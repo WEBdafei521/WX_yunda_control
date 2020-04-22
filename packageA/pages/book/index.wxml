@@ -1,0 +1,64 @@
+<scroll-view scroll-y class="scrollPage">
+  <view class="cu-list menu" style="border-top:20rpx solid rgba(150,150,150,.1)">
+    <view class="cu-item padding-top items">
+        <view class="cu-avatar round lg margin-right" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81007.jpg);"></view>
+        <view class="content">
+          <!-- 油站名称 -->
+          <view class="text-black">{{station.departname}}</view>
+          <!-- 油站的详细信息 -->
+          <view class="text-grey text-sm flex">
+            <text class="text-cut">
+                <text class="cuIcon-locationfill text-blue  margin-right-xs"></text>{{station.address}}
+            </text>
+          </view>
+        </view>
+    </view>
+    <!-- 选中油品 --> 
+    <view class="cu-item arrow" bindtap="isShow">
+      <view class="content">
+        <text class="cuIcon-btn text-green"></text>
+        <text class="text-grey"></text>
+        <text style="padding:0 16rpx;">{{oilType}}</text>
+      </view>
+      <view class="action arrow">
+        <view class="action lg"> 
+          ￥{{simpelPrice}} <text wx:if="{{label}}" class="text-red">(折扣价{{label == null?'':label}})</text> 
+        </view>
+      </view>
+    </view>
+    <!-- 油品列表  -->
+    <view class="grid col-5 padding-sm bg-white oil {{oilTyleIsShow?'':'oilType'}}">
+      <view wx:for="{{checkboxOil}}" wx:key="index">
+        <button class="cu-btn orange block {{item.check?'bg-blue':'line-gray'}}" data-a="{{item.check}}" style="width:150rpx;padding:0 20rpx;" bindtap="ChooseCheckboxOil" data-value="{{item.value}}"> {{item.name}} </button>
+      </view>
+    </view>
+    <!-- 输入加油金额 -->
+    <view style="background:#fff;">
+      <view style="background:#fff;padding:16rpx;color:#666;">请输入加油金额(机显)</view>
+      <view style="background:#fff;padding:16rpx;" class="my_display">
+         <text class="text-black text-bold" style="font-size:56rpx;">￥</text>  <input class="text-bold" maxlength="6" value="{{price}}" type='number' bindinput="inputVal" style="width:70vw;height:80rpx;font-size:76rpx;"/><text class="text-gray">{{oilSum}}L</text> 
+      </view>
+    </view>
+    <!-- 金额模块 -->
+    <view class="grid col-3 padding-sm bg-white">
+      <view wx:for="{{checkbox}}" class="padding-xs" wx:key="index">
+        <button class="cu-btn orange lg block {{item.checked?'bg-blue':'line-gray'}}" style="width:210rpx;" bindtap="ChooseCheckbox" data-value="{{item.value}}"> {{item.name}} </button>
+      </view>
+    </view>
+  </view>
+    <!-- 去下单 -->
+    <view class="box">
+      <view class="my_display_mid">
+        <text class="text-black">金额：￥</text>
+        <text class="text-black text-bold" style="font-size:56rpx;">{{price}}</text>
+        <text style="width:100rpx;height:30rpx;" wx:if="{{price}}">元</text>
+      </view>
+      <view>
+        <view class="flex flex-direction">
+          <button class="cu-btn bg-blue margin-tb-sm lg" bindtap="submit">去下单</button>
+        </view>
+      </view>
+    </view>
+
+  <!-- <view class="cu-tabbar-height"></view> -->
+</scroll-view>

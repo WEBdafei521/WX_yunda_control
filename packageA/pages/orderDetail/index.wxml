@@ -1,0 +1,132 @@
+<scroll-view scroll-y class="scrollPage">
+  <view class="cu-list menu sm-border margin-top card-menu">
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-peoplefill text-green"></text>
+        <text class="text-grey">用户名</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{orderInfo.username}}</text>
+      </view>
+    </view>
+
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-phone text-olive"></text>
+        <text class="text-grey">手机号</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{orderInfo.username}}</text>
+      </view>
+    </view>
+
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-focus text-orange"></text>
+        <text class="text-grey">订单编号</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{orderInfo.flowno}}</text>
+      </view>
+    </view>
+
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-emoji text-orange"></text>
+        <text class="text-grey">加油站名称</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{orderInfo.departname}}</text>
+      </view>
+    </view>
+
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-location text-orange"></text>
+        <text class="text-grey">加油站地址</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{orderInfo.address}}</text>
+      </view>
+    </view>
+
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-same text-orange"></text>
+        <text class="text-grey">油品</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{orderInfo.oilName}}</text>
+      </view>
+    </view>
+
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-recharge text-orange"></text>
+        <text class="text-grey">单价L/元</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{orderInfo.price}}</text>
+      </view>
+    </view>
+
+    
+
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-rankfill text-green"></text>
+        <text class="text-grey">消费类型</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">加油</text>
+      </view>
+    </view>
+
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-vipcard text-pink"></text>
+        <text class="text-grey">订单金额</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{orderInfo.orderMoney}}</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-rechargefill text-pink"></text>
+        <text class="text-grey">结算金额</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{orderInfo.amountMoney}}</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-vipcard text-pink"></text>
+        <text class="text-grey">优惠金额</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{orderInfo.discountPrice}}</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-coin text-pink"></text>
+        <text class="text-grey">支付方式</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">线上支付</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-goodsnew text-red"></text>
+        <text class="text-grey">提货码</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{orderInfo.deliveryCode}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>

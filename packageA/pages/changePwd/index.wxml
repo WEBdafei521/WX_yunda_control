@@ -1,0 +1,20 @@
+<scroll-view scroll-y class="scrollPage">
+  <form bindsubmit="formSubmit">
+    <!-- 原密码 -->
+    <view class="cu-form-group margin-top">
+      <view class="title">原密码</view>
+      <input maxlength="11" name="username" placeholder="请输入原密码"></input>
+    </view>
+    <!-- 新密码 -->
+    <view class="cu-form-group margin-top">
+      <view class="title">新密码</view>
+      <input maxlength="11" name="password" placeholder="请输入新密码"></input>
+    </view>
+
+    <button class="margin-top bg-blue" formType="submit">确定修改</button>
+  </form>
+
+
+
+  <view class="cu-tabbar-height"></view>
+</scroll-view>

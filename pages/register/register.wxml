@@ -1,0 +1,29 @@
+<!--pages/register/index.wxml-->
+<view class="page-body">
+  <view class="register">注册账户</view>
+  <view class="inputs" style="margin:30rpx 0;padding:10rpx 0;border-bottom:1px solid rgba(100,100,100,.2)">
+    <view class="myFont_nol my_padding_tb">用户名</view> 
+    <view><input type="text" value="{{register.username}}" bindinput="registerUsername" placeholder-style="font-size:14px;" placeholder="请输入用户名"></input></view>
+  </view>
+
+  <view class="inputs" style="margin:30rpx 0;padding:10rpx 0;border-bottom:1px solid rgba(100,100,100,.2)">
+    <view class="myFont_nol my_padding_tb">手机号</view> 
+   <view><input type="number" value="{{register.phone}}" bindinput="registerPhone" placeholder-style="font-size:14px;" placeholder="请输入手机号"></input></view>
+  </view>
+
+  <view class="inputs" style="margin:30rpx 0;padding:10rpx 0;border-bottom:1px solid rgba(100,100,100,.2)">
+    <view class="myFont_nol my_padding_tb">密码</view> 
+    <view><input type="password" value="{{register.password}}" bindinput="registerPassword" placeholder-style="font-size:14px;" placeholder="请输入密码"></input></view>
+  </view>
+
+  <view class="inputs" style="margin:30rpx 0;padding:10rpx 0;border-bottom:1px solid rgba(100,100,100,.2)">
+    <view class="myFont_nol my_padding_tb">重复密码</view> 
+    <view><input type="password" value="{{register.password2}}" bindinput="registerPassword2" placeholder-style="font-size:14px;" placeholder="再次输入密码"></input></view>
+  </view>
+
+  <view class="inputs" style="margin:30rpx 0;padding:10rpx 0;border-bottom:1px solid rgba(100,100,100,.2)">
+    <view class="myFont_nol my_padding_tb">授权码</view> 
+    <view><input type="text" value="{{register.authCode}}" bindinput="registerAuthCode" placeholder-style="font-size:14px;" placeholder="请输入授权码"></input></view>
+  </view>
+  <view class="login" bindtap="register">确认</view>
+</view>

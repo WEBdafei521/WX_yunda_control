@@ -1,0 +1,13 @@
+/* packageA/pages/order/index.wxss */
+.box{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+.list{
+  /* margin: 0 16rpx;
+  border-radius: 20rpx; */
+}
+.lefts{
+  left: 46rpx !important;
+}

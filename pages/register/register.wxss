@@ -1,0 +1,14 @@
+/* pages/register/index.wxss */
+.page-body{
+  padding: 40rpx 60rpx;
+}
+
+.register{
+  font-size: 48rpx;
+}
+.login{
+  	/* background-image:linear-gradient(to right,#3343EE,#673FEE,rgb(115, 78, 238),rgb(108, 76, 212)); */
+    background-image:linear-gradient(to right,#1A88F9,#1A88F9,#1987F8,#1A88F9);
+    width:95%;height:100rpx;margin:0 auto;text-align:center;line-height:100rpx;
+    border-radius: 12rpx;color: #ffffff;margin-top:40rpx; 
+}

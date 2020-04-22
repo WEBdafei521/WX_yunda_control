@@ -1,0 +1,54 @@
+/* packageA/pages/pay/index.wxss */
+.titleSty{
+  background:linear-gradient(to right,#F32A3A,#F62F34,#FB3C2D,#FB4E2C,#FB6D27);
+  border-bottom-left-radius: 32rpx;
+  border-bottom-right-radius: 32rpx;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.back{
+  position: fixed;
+  top: 55rpx;
+  left: 20rpx;
+  width: 100vw;
+  background:linear-gradient(to right,#F32A3A,#F62F34,#FB3C2D,#FB4E2C,#FB6D27);
+}
+
+.oilType,.priceInfo{
+  width: 100vw;
+  padding: 32rpx;
+  background: #fff;
+  border-radius: 32rpx;
+  display: flex;
+}
+.orderInfo{
+  padding: 10rpx;
+  border-radius: 32rpx;
+}
+.orderInfo .items{
+  padding:26rpx;
+}
+.orderInfo .items .title{
+  padding-right: 30rpx;
+}
+.orderInfo .items .item_val{
+  color: #000;
+}
+.bottoms{
+  position:fixed;
+  bottom: 0;
+  height: 100rpx;
+  width: 100vw;
+  border-top: 2rpx solid rgba(150,150,150,.2);
+  background: #fff;
+  
+} 
+.orderBtn{
+  width: 150rpx !important;
+  padding: 0 ;
+  
+}

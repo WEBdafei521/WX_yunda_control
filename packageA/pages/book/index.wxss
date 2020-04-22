@@ -1,0 +1,26 @@
+/* packageA/pages/book/index.wxss */
+.box{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: #ffffff;
+  padding: 20rpx;
+}
+.lin-height{
+  height: 36rpx !important;
+  padding: 0rpx 12rpx !important;
+}
+.items{
+  height: 156rpx !important;
+}
+.oil{
+  height: 114rpx;
+  padding: 20rpx;
+  overflow: hidden;
+  transition: height .8s,padding .8s;
+}
+.oilType{
+  height: 0rpx !important;
+  padding: 0;
+  overflow: hidden;
+}

@@ -1,0 +1,60 @@
+<scroll-view scroll-y class="scrollPage">
+  <view class="cu-list menu sm-border margin-top card-menu" wx:for="{{M1List}}" wx:key='index'>
+  <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-new text-olive"></text>
+        <text class="text-grey">卡号</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{item.cardNo}}</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-peoplefill text-green"></text>
+        <text class="text-grey">用户名</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{item.username}}</text>
+      </view>
+    </view>
+
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-warn text-orange"></text>
+        <text class="text-grey">状态</text>
+      </view>
+      <view class="action">
+        <button wx:if="{{item.status==1 }}" style="width:124rpx;" class="cu-btn round bg-olive shadow sm">正常</button>
+        <button wx:else style="width:114rpx;" style="width:124rpx;" class="cu-btn round bg-grey shadow sm">停用</button>
+      </view>
+    </view>
+
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-settings text-red"></text>
+        <text class="text-grey">操作</text>
+      </view>
+      <view class="action">
+        <button wx:if="{{item.status==1}}" data-index="{{index}}" bindtap="isForbidden" style="width:124rpx;" class="cu-btn round bg-green shadow sm">停用</button>
+        <button wx:else style="width:114rpx;" data-index="{{index}}" bindtap="isForbidden" style="width:124rpx;" class="cu-btn round bg-red shadow sm">启用</button>
+      </view>
+    </view>
+  </view>
+  <!-- <view wx:if="{{M1List.length==0}}">
+      <view class="margin flex">
+        <view class="bg-white flex-sub radius shadow-lg">
+          <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="gif-white response" style="height:240rpx"></image>
+        </view>
+      </view>
+      <view style="text-align:center;">
+        没有更多了
+      </view>
+  </view>  -->
+  <view wx-if="{{M1List.length==0}}" class="bg-white flex-sub margin-right radius shadow-lg" style="width:250rpx;margin:250rpx auto;">
+        <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="gif-white response" style="height:240rpx;width:250rpx;"></image>
+        <view style="text-align:center;padding-bottom:16rpx;">暂无M1卡</view>
+    </view>
+  
+  <view class="cu-tabbar-height"></view>
+</scroll-view>

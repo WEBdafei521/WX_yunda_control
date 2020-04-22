@@ -1,0 +1,41 @@
+<scroll-view scroll-y class="scrollPage">
+  <view class="cu-list menu sm-border margin-top card-menu" wx:for="{{carInfo}}" wx:key>
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-peoplefill text-green"></text>
+        <text class="text-grey">司机</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{item.username}}</text>
+      </view>
+    </view>
+
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-news text-olive"></text>
+        <text class="text-grey">余额</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{item.balance}}</text>
+      </view>
+    </view>
+
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-focus text-orange"></text>
+        <text class="text-grey">更新时间</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{item.updateTime}}</text>
+      </view>
+    </view>
+
+  </view>
+ 
+  <view wx-if="{{carInfo.length==0}}" class="bg-white flex-sub margin-right radius shadow-lg" style="width:250rpx;margin:250rpx auto;">
+    <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="gif-white response" style="height:240rpx;width:250rpx;"></image>
+    <view style="text-align:center;padding-bottom:16rpx;">暂无车辆</view>
+  </view>
+  
+  <view class="cu-tabbar-height"></view>
+</scroll-view>
